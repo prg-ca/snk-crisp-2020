@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="ad.size" content="width=640,height=1000">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/easepack_2.0.1_min.js"></script>
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenlite_2.0.1_min.js"></script>
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssplugin_2.0.1_min.js"></script>
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/timelinemax_2.0.1_min.js"></script>
+  <script type="text/javascript">
+    var clickTag = "#"; 
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      TweenLite.ticker.useRAF(false);
+      TweenLite.lagSmoothing(0);
+      var tl = new TimelineMax({ repeat: 3, repeatDelay: 3});
+      // var tl = new TimelineMax();
+
+      tl.from("#schirm", 0.3, {autoAlpha: 1})
+        .from("#crop", 0.2, {x: 400}, '-=0.1')
+        .from("#pack", 0.4, {y: -600}, '+=0.1')
+        .from("#txt01", 0.3, {x: -600})
+        .to("#pack", 0.2, {rotation: 16}, '+=0.3')
+        .to("#pack", 0.2, {rotation: 0})
+
+        .from("#btn-cont", 0.3, {opacity: 0, scale: 0.4})
+        .to("#txt01", 0.3, {x: -600}, '+=0.5')
+
+        .from("#txt02", 0.4, {x: -600})
+        .to("#pack", 0.2, {rotation: 16}, '+=0.3')
+        .to("#pack", 0.2, {rotation: 0})
+        .from("#pointer", 0.6, {x: 400, y: 300}, '+=0.4')
+        .to("#pointer", 0.3, {x: 10, y: 7})
+        .to("#btn", 0.3, {x: 10, y: 7}, '-=0.3')
+        .to("#pointer", 0.3, {x: 0, y: 0})
+        .to("#btn", 0.3, {x: 0, y: 0}, '-=0.3')
+        ;
+   });
+  </script>
+</head>
+<body>
+  <a href="javascript:window.open(window.clickTag)" target="_blank">
+    <div class="container">
+
+
+    <div id="crop" class="el">
+        <img src="crop.png">
+      </div>
+      <div id="pack" class="el">
+        <img src="pack.png">
+      </div>
+      <div id="txt01" class="el  txt">
+        <img src="txt01.svg">
+      </div>
+      <div id="txt02" class="el  txt">
+        <img src="txt02.svg">
+      </div>
+      <div id="btn-cont" class="el">
+        <div id="btn-shadow" class="el">
+          <img src="btn-shadow.svg">
+        </div>
+        <div id="btn" class="el">
+          <img src="btn.svg">
+        </div>
+      </div>
+      <div id="pointer" class="el  txt">
+        <img src="pointer.svg">
+      </div>
+      
+
+    </div>
+  </a>
+</body>
