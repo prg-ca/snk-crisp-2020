@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <script type="text/javascript" src="https://awaps.yandex.net/data/lib/adsdk.js"></script>
+  <meta name="ad.size" content="width=336,height=280">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="tweenlite_2.0.1_min.js"></script>
+  <script type="text/javascript" src="cssplugin_2.0.1_min.js"></script>
+  <script type="text/javascript" src="timelinemax_2.0.1_min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      TweenLite.ticker.useRAF(false);
+      TweenLite.lagSmoothing(0);
+      var tl = new TimelineMax({ repeat: 3, repeatDelay: 3});
+
+      tl.from("#schirm", 0.3, {autoAlpha: 1})
+        .from("#crop", 0.2, {x: 600}, '-=0.1')
+        .from("#pack", 0.4, {y: -600}, '+=0.1')
+        .from("#txt01", 0.3, {opacity: 0, scale: 0.4, y: 50})
+        .to("#pack", 0.2, {rotation: 16}, '+=0.3')
+        .to("#pack", 0.2, {rotation: 0})
+        .from("#txt02", 0.2, {x: -300})
+        .from("#txt03", 0.2, {x: -300})
+        .to("#pack", 0.2, {rotation: 16}, '+=0.6')
+        .to("#pack", 0.2, {rotation: 0})
+       ;
+   });
+  </script>
+</head>
+<body>
+  <a id="click_area" href="#" target="_blank">
+    <div class="container">
+      <div id="crop" class="el">
+        <img src="crop.png">
+      </div>
+      <div id="pack" class="el">
+        <img src="pack.png">
+      </div>
+      <div id="txt01" class="el  txt">
+        <img src="txt01.svg">
+      </div>
+      <div id="txt02" class="el  txt">
+        <img src="txt02.svg">
+      </div>
+      <div id="txt03" class="el  txt">
+        <img src="txt03.svg">
+      </div>
+    </div>
+  </a>
+  <script>
+    document.getElementById("click_area").href = yandexHTML5BannerApi.getClickURLNum(1);
+  </script>
+</body>
