@@ -13,7 +13,6 @@
       TweenLite.ticker.useRAF(false);
       TweenLite.lagSmoothing(0);
       var tl = new TimelineMax({ repeat: 3, repeatDelay: 3});
-
       tl.from("#schirm", 0.3, {autoAlpha: 1})
         .from("#crop1", 0.2, {x: 300}, '-=0.1')
         .from("#crop2", 0.2, {x: -360}, '-=0.2')
