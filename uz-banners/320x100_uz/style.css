@@ -27,7 +27,7 @@ body, body * {
   background-color: #38b5e6;
   /* background-size: cover; */
 }
-
+.container{border:1px #3c1400 solid;}
 img {
   width: 100%;
   height: auto;
